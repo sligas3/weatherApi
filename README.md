@@ -7,6 +7,17 @@ Una Api creada para consultar datos del clima.
 - Clonar el proyecto en donde se desee ejecutar.
 - Seguir con la instalación que se provee.
 
+## Endpoints
+
+- /location
+  Devuelve un json con la ubicacion actual.
+
+- /current/:city?
+  Devuelve un json con la ubicación actual y el clima de la ubicación actual. Se le puede pasar una ciudad como parámetro y devuelve los datos de la misma.
+
+- /forecast/:city?
+  Devuelve un json con la ubicación actual y el pronóstico de la ubicación actual. Se le puede pasar una ciudad como parámetro y devuelve los datos de la misma.
+
 ### Prerequisitos
 
 - Se necesita tener instalado node.js y npm.
