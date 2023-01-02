@@ -1,3 +1,4 @@
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const v1WeatherApp = require('./v1/routes/weatherRoutes');
 

@@ -3,7 +3,7 @@ const axios = require('axios');
 const getLocation = async (city) => {
 	try {
 		const url = city
-			? `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=32e37d3c443bdac8cbcd429c6762ed0d`
+			? `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${process.env.API_KEY}`
 			: 'http://ip-api.com/json/?fields=city';
 		const location = await axios.get(url);
 
@@ -18,7 +18,7 @@ const getLocation = async (city) => {
 const getWeather = async (city) => {
 	try {
 		const weather = await axios.get(
-			`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=es&units=metric&appid=32e37d3c443bdac8cbcd429c6762ed0d`
+			`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=es&units=metric&appid=${process.env.API_KEY}`
 		);
 		return weather.data;
 	} catch (error) {
@@ -29,7 +29,7 @@ const getWeather = async (city) => {
 const getForecast = async (city) => {
 	try {
 		const forecast = await axios.get(
-			`https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=5&lang=es&units=metric&appid=32e37d3c443bdac8cbcd429c6762ed0d`
+			`https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=5&lang=es&units=metric&appid=${process.env.API_KEY}`
 		);
 		return forecast.data;
 	} catch (error) {
