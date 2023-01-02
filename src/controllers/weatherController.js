@@ -3,6 +3,8 @@ const weatherService = require('../services/weatherService');
 const getLocation = async (req, res) => {
 	try {
 		const location = await weatherService.getLocation();
+		res.header('Content-Type', 'application/json');
+		res.header('Access-Control-Allow-Origin', '*');
 		res.status(200).send({ status: 'OK', data: location });
 	} catch (error) {
 		res
